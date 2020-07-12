@@ -43,7 +43,7 @@ class Books extends Component {
         <Row>
           <Col size="md-6">
             <Jumbotron>
-              <h1>What Books Have I Read?</h1>
+              <h1>What Books Should I Read?</h1>
             </Jumbotron>
             <form>
               <Input name="title" placeholder="Title (required)" />
