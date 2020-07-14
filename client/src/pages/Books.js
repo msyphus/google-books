@@ -4,7 +4,6 @@ import DeleteBtn from '../components/DeleteBtn';
 import API from '../utils/API';
 import { Col, Row, Container } from '../components/Grid';
 import { List, ListItem } from '../components/List';
-import { Input, TextArea, FormBtn } from '../components/Form';
 
 class Books extends Component {
   state = {
@@ -26,35 +25,13 @@ class Books extends Component {
       .catch((err) => console.log(err));
   };
 
-  handleFormSubmit = () => {
-    API.saveBook().then((res) =>
-      this.setState({
-        books: res.data,
-        title: res.title,
-        author: res.author,
-        synopsis: res.synopsis
-      })
-    );
-  };
-
   render() {
     return (
       <Container fluid>
         <Row>
-          <Col size="md-6">
-            <Jumbotron>
-              <h1>What Books Have I Read?</h1>
-            </Jumbotron>
-            <form>
-              <Input name="title" placeholder="Title (required)" />
-              <Input name="author" placeholder="Author (required)" />
-              <TextArea name="synopsis" placeholder="Synopsis (Optional)" />
-              <FormBtn>Submit Book</FormBtn>
-            </form>
-          </Col>
           <Col size="md-6 sm-12">
             <Jumbotron>
-              <h1>Books On My List</h1>
+              <h1>My Reading List</h1>
             </Jumbotron>
             {this.state.books.length ? (
               <List>
